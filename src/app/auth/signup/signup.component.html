@@ -1,0 +1,74 @@
+<div class="container">
+
+
+  <div class="row justify-content-center align-items-center mt-3 mb-1">
+    <div class="col-xs-12 col-sm-10 col-md-8">
+      <div class="card">
+        <div class="card-block">
+          <div class="row justify-content-center align-items-center">
+            <div class="row">
+              <div class="col-md-12">
+                <h4 class="text-center">Signup</h4>
+              </div>
+            </div>
+          </div>
+          <form class="form-horizontal" #f="ngForm" (submit)="onSignup(f)">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="sr-only" for="email">E-Mail Address</label>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon"><i class="fa fa-at"></i></div>
+                    <input type="email" name="email" class="form-control" id="email"
+                           placeholder="you@example.com" required autofocus ngModel>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="sr-only" for="password">Password</label>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                      minlength="6"
+                      ngModel>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button
+                  type="submit"
+                  class="btn btn-success btn-lg btn-block cursor-pointer"
+                  [disabled]="f.invalid"
+                >
+                  <i class="fa fa-sign-in"></i> Signup
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a routerLink="/auth" class="pull-right">Already have an account? Login here.</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
